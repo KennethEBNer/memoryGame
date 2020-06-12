@@ -52,8 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
 
     cardArray.sort(function(){
-        0.5 - Math.random()
-    }
+        return 0.5 - Math.random();
+    });
 
     const gridDiv = document.querySelector('.grid');
     const resultDisplaySpan = document.querySelector('#result')
