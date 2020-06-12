@@ -56,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const gridDiv = document.querySelector('.grid');
-    const resultDisplaySpan = document.querySelector('#result')
+    const resultDisplaySpan = document.querySelector('#result');
+    const matchesSpan = document.querySelector('#matches');
     var cardsChosen = [];
     var cardsChosenId = [];
     var cardsWon = [];
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var optionOneId = cardsChosenId[0]
         var optionTwoId = cardsChosenId[1]
         if (cardsChosen[0] === cardsChosen[1] && cardsChosenId[0] !== cardsChosenId[1]) {
-            alert("You found a match!")
+            /* alert("You found a match!") */
             cards[optionOneId].setAttribute('src', 'resources/images/blank.jpg')
             cards[optionTwoId].setAttribute('src', 'resources/images/blank.jpg')
             cardsWon.push(cardsChosen)
@@ -95,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cardsChosenId = [];
         resultDisplaySpan.textContent = cardsWon.length
         if (cardsWon.length === cardArray.length / 2) {
+            matchesSpan.innerHTML = "";
             resultDisplaySpan.textContent = "Congratualations, you won!"
         }
     }
